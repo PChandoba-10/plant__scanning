@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Front & Back Camera</title>
+</head>
+<body>
+
+    <h2>Camera Access</h2>
+    <video id="video" autoplay playsinline width="400"></video>
+    <br>
+    <button onclick="switchCamera()">Switch Camera</button>
+
+    <script>
+        let currentFacingMode = "environment"; // Default: Back camera
+        let stream = null;
+
+        async function startCamera(facingMode) {
+            if (stream) {
+                // Stop previous camera stream before starting a new one
+                stream.getTracks().forEach(track => track.stop());
+            }
+
+            try {
+                stream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: facingMode }
+                });
+
+                document.getElementById("video").srcObject = stream;
+            } catch (error) {
+                console.error("Error accessing camera: ", error);
+            }
+        }
+
+        function switchCamera() {
+            currentFacingMode = currentFacingMode === "environment" ? "user" : "environment";
+            startCamera(currentFacingMode);
+        }
+
+        // Start with the back camera by default
+        startCamera(currentFacingMode);
+    </script>
+
+</body>
+</html>
