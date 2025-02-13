@@ -29,6 +29,7 @@ h2 {
     justify-content: center;
     height: 75vh;
     margin-left: 150px;
+    backgroundcolor:green;
 }
 
 input[type="file"] {
