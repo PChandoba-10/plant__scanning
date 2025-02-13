@@ -1,11 +1,14 @@
 body {
     display: flex;
     flex-direction: column;
-    background-image: url('https://i.pinimg.com/736x/66/ed/e5/66ede557ff4cc465b54a751cc2035293.jpg');
+    /* background-image: url('https://i.pinimg.com/736x/66/ed/e5/66ede557ff4cc465b54a751cc2035293.jpg'); */
+    background-image: url("https://i.pinimg.com/236x/47/fa/4e/47fa4eedd6f954d47fd64fb4e9fe2cad.jpg");
     align-items: center;
     justify-content: center;
     height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font: weight 1000px;
+    color: #ccc;
     margin: 0;
     padding: 0;
     background-size: cover;
